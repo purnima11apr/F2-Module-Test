@@ -1,0 +1,95 @@
+
+
+nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+
+div>a{
+    text-decoration: none;
+    color: black;
+  
+}
+
+div>a:hover{
+    color:rgba(80, 158, 47, 1);
+    
+}
+
+.links{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-section{
+   width: 90%;
+   height: 300px;
+   border-radius: 10px;
+   margin-left: 70px;
+   /* background: url('./assets/bg.jpg'); */
+   background: url('./assets/bg.jpg');
+   background-size: cover;
+
+}
+
+input{
+
+    width:85%;
+    border: 1px solid grey;
+}
+.btn1{
+    background-color:  rgba(234, 170, 0, 1);
+
+    border: none;
+    color: white;
+}
+
+.btn2{
+    background-color:  rgba(196, 214, 0, 1);
+    border: none;
+    color: white;
+}
+.btn3{
+    background-color:  rgba(220, 88, 42, 1);   ;
+    border: none;
+    color: white;
+} 
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.card {
+    width: 305px;
+    height: 315px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+    margin-bottom: 16px;
+}
+
+
+.card img {
+    width: 100%; /* Make images fill their container */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.like-button {
+    background-color: #ccc;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.liked {
+    background-color: #ff5733; 
+}
