@@ -165,17 +165,27 @@ function createRecipeCard(recipe) {
     image.alt = recipe.name;
 
     // Create other elements for the card (e.g., name, time, rating, type)
+    const type = document.createElement("p");
+    type.textContent = ` ${recipe.type.charAt(0).toUpperCase()}${recipe.type.slice(1)}`; // Capitalize the first letter
+    type.classList.add("veg-nonveg");
+
+    const nameAndRating = document.createElement("div"); // Create a container for name and rating
+    nameAndRating.classList.add("name-and-rating");
+
+    const rating = document.createElement("p");
+    rating.textContent = `${recipe.rating}`;
+    rating.classList.add("rating");
+
+    const starIcon = document.createElement("i");
+    starIcon.classList.add("fa-solid", "fa-star", "icon-color");
+    rating.insertBefore(starIcon, rating.firstChild);
+
     const name = document.createElement("h2");
     name.textContent = recipe.name;
 
     const time = document.createElement("p");
-    time.textContent = `Time: ${recipe.time}`;
-
-    const type = document.createElement("p");
-    type.textContent = `Type: ${recipe.type}`;
-
-    const rating = document.createElement("p");
-    rating.textContent = `Rating: ${recipe.rating}`;
+    time.textContent = `${recipe.time}`;
+    time.classList.add("time");
 
     // Create a "like" button
     const likeButton = document.createElement("button");
@@ -191,15 +201,20 @@ function createRecipeCard(recipe) {
 
     // Append elements to the card
     card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(time);
     card.appendChild(type);
-    card.appendChild(rating);
+
+    // Append the name and rating container to the card
+    card.appendChild(nameAndRating);
+    nameAndRating.appendChild(name);
+    nameAndRating.appendChild(rating);
+
+    card.appendChild(time);
     card.appendChild(likeButton);
 
     // Append the card to the container
     recipeCardsContainer.appendChild(card);
 }
+
 
 // Add an event listener to the search button
 searchButton.addEventListener("click", () => {
